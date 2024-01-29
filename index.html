@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TIN Tasks</title>
+</head>
+<body>
+
+<p>Open the console</p>
+
+<script>
+
+    console.log(`Task 1) Use of a for loop`);
+
+    for (let i = 0; i < 5; i++) {
+        console.log(`i = ${i}`);
+    }
+
+    console.log(`\nTask 2) Use of a while loop`);
+
+    let count = 0;
+    while (count < 3) {
+        console.log(`i = ${count}`);
+        count++;
+    }
+
+    console.log(`\nTask 3) Use of a for .. in loop`);
+
+    const obj = { a: 1, b: 2, c: 3 };
+    for (let key in obj) {
+        console.log(`key: ${key}, value: ${obj[key]}`);
+    }
+
+    console.log(`\nTask 4) Use of a for .. of loop`);
+
+    for (let value of [1, 2, 3, 4, 5]) {
+        console.log(`value: ${value}`);
+    }
+
+    console.log(`\nTask 5) Use of an if instruction`);
+
+    if ([1, 2, 3, 4, 5].length > 3) {
+        console.log('Array is very big');
+    }
+
+    console.log(`\nTask 6) Function with numeric operations`);
+
+    function sum(a, b) {
+        if (typeof a === 'number' && typeof b === 'number') {
+            return a + b;
+        } else {
+            return 'Error: keep this invalid data with you';
+        }
+    }
+    console.log(sum(1, 1));
+
+    console.log(`\nTask 7) Function with variable parameters`);
+
+    function sumAll(...nums) {
+        return nums.reduce((acc, curr) => acc + curr, 0);
+    }
+    console.log(sumAll(1, 1, 1));
+
+    console.log(`\nTask 8) Function taking a function as a parameter`)
+
+    function apply(callback, value) {
+        return callback(value);
+    }
+    function meow(name) { return `Meow (c) ${name}`; }
+    function roar(name) { return `Roar (c) ${name}`; }
+    console.log(apply(meow, `Pussy`));
+    console.log(apply(roar, `Rax`));
+
+    console.log(`\nTask 9) Using a constructor to create objects`);
+
+    function Person(name, age, isVegan) {
+        this.name = name;
+        this.age = age;
+        this.isVegan = isVegan; // secret info
+        this.info = function() {
+            console.log(`Name: ${this.name}; Age: ${this.name}`);
+        };
+    }
+    const john = new Person('John Week', 48, true);
+    john.info();
+
+    console.log(`\nTask 10) Using a class to create an object`);
+
+    class Killer {
+        constructor(name, price, available) {
+            this.name = name;
+            this.price = price;
+            this.available = available;
+        }
+        info() {
+            console.log(`Name: ${this.name}; Price: ${this.price}; Status: ${this.available ? 'available' : 'hunt'}`);
+        }
+    }
+    const week = new Killer('John Week', 1000000, false);
+    week.info();
+
+</script>
+
+</body>
+</html>
